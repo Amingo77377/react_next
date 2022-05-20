@@ -1,3 +1,5 @@
+import React, {useEffect} from 'react'
+
 function HomePage() {
   useEffect(() => {
   const script = document.createElement('script');
