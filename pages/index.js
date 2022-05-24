@@ -13,7 +13,7 @@ function HomePage() {
     script.onload = () => {
       FreshworksWidget('open')
       setTimeout(() => {
-        document.getElementById('freshworks-container').?style.zIndex = 2147483640
+        document.getElementById('freshworks-container')?.style.zIndex = 2147483640
       }, 500)
       window.ReactNativeWebView?.postMessage('done')
     }
