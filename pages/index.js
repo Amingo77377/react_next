@@ -10,7 +10,10 @@ function HomePage() {
     script.src = "https://widget.freshworks.com/widgets/67000003397.js";
     script.type = 'text/javascript'
     script.defer = true;
-
+    script.onload = () => {
+      FreshworksWidget('open')
+      window.ReactNativeWebView?.postMessage('done')
+    }
     document.body.appendChild(script);
 
     return () => {
@@ -19,14 +22,14 @@ function HomePage() {
   }, []);
   
   return (
-    <div>
-      <h1>Welcome to Next.js!</h1>
-    <ul>
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-    </ul>
-  </div>
+    <div style={{position: 'relative'}}>
+     <div 
+      onClick={(e) => {
+        e.stopPropagation()
+        window.ReactNativeWebView?.postMessage('close')
+      }}
+      style={{width: '32px', height: '32px', position: 'absolute', top: '16px', right: '16px', zIndex: 99999, backgroundColor: 'red'}}></div>
+    </div>
   )
 }
 
