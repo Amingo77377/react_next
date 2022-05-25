@@ -14,6 +14,7 @@ function HomePage() {
       FreshworksWidget('open')
       setTimeout(() => {
         document.getElementById('freshworks-container')?.style.zIndex = 2147483640
+        
       }, 500)
       window.ReactNativeWebView?.postMessage('done')
     }
@@ -24,6 +25,16 @@ function HomePage() {
     }
   }, []);
   
+  useEffect(() => {
+    const messageHandler = (message) => {
+      window.ReactNativeWebView?.postMessage(JSON.stringify(message))
+    }
+    window.addEventListener('message', messageHandler)
+    return () => {
+      window.removeEventListener('message', messageHandler)
+    }
+  }, [])
+  
   return (
     <div style={{position: 'relative'}}>
      <div 
@@ -31,7 +42,7 @@ function HomePage() {
         e.stopPropagation()
         window.ReactNativeWebView?.postMessage('close')
       }}
-      style={{width: '32px', height: '32px', position: 'absolute', top: '16px', right: '16px', zIndex: 2147483647, backgroundColor: 'red'}}></div>
+      style={{width: '48px', height: '48px', position: 'absolute', top: '8px', right: '8px', zIndex: 2147483647, backgroundColor: 'red'}}></div>
     </div>
   )
 }
