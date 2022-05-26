@@ -16,6 +16,44 @@ function HomePage() {
     script.defer = true;
     script.onload = () => {
       FreshworksWidget('open')
+            FreshworksWidget("setLabels", {
+        'zh-TW': {
+          banner: "rezio 支援中心",
+          launcher: "支援",
+          contact_form: {
+            title: "聯絡我們",
+            submit: "送出",
+            confirmation: "您的讯息已成功送出！"
+          },
+        },
+        'zh-CN': {
+          banner: "rezio 支持中心",
+          launcher: "支持",
+          contact_form: {
+            title: "联络我们",
+            submit: "送出",
+            confirmation: "您的讯息已成功送出！"
+          },
+        },
+        'ja-JP': {
+          banner: "rezio 支援中心",
+          launcher: "支援",
+          contact_form: {
+            title: "聯絡我們",
+            submit: "送出",
+            confirmation: "您的讯息已成功送出！"
+          },
+        },
+        'ko': {
+          banner: "rezio 支援中心",
+          launcher: "支援",
+          contact_form: {
+            title: "聯絡我們",
+            submit: "送出",
+            confirmation: "您的讯息已成功送出！"
+          },
+        }
+      });
       const timer = setTimeout(() => {
         document.getElementById('freshworks-container')?.style.zIndex = 2147483640
         
