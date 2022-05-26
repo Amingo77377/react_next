@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 
 function HomePage() {
   const router = useRouter()
+  console.log(router)
   useEffect(() => {
     window.fwSettings={
       'widget_id': 67000003397,
