@@ -20,7 +20,7 @@ function HomePage() {
     return () => {
       document.body.removeChild(script);
     }
-  }, [window.fwSettings]);
+  }, [window?.fwSettings]);
   
 //   useEffect(() => {
 //     const messageHandler = (message) => {
