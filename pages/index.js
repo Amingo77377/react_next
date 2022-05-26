@@ -2,6 +2,10 @@ import React, {useEffect} from 'react'
 
 function HomePage() {
   useEffect(() => {
+    window.fwSettings={
+      'widget_id': 67000003397,
+      'locale': 'en'
+    }
     const script = document.createElement('script');
     !function(){if("function"!=typeof window.FreshworksWidget){var n=function(){n.q.push(arguments)};n.q=[],window.FreshworksWidget=n}}() 
     script.src = "https://widget.freshworks.com/widgets/67000003397.js";
