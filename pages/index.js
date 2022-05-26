@@ -1,39 +1,39 @@
 import React, {useEffect} from 'react'
 
 function HomePage() {
-  useEffect(() => {
-  const script = document.createElement('script');
-     window.fwSettings={
-      'widget_id':67000003397
-      };
-      !function(){if("function"!=typeof window.FreshworksWidget){var n=function(){n.q.push(arguments)};n.q=[],window.FreshworksWidget=n}}() 
-    script.src = "https://widget.freshworks.com/widgets/67000003397.js";
-    script.type = 'text/javascript'
-    script.defer = true;
-    script.onload = () => {
-      FreshworksWidget('open')
-      setTimeout(() => {
-        document.getElementById('freshworks-container')?.style.zIndex = 2147483640
+//   useEffect(() => {
+//   const script = document.createElement('script');
+//      window.fwSettings={
+//       'widget_id':67000003397
+//       };
+//       !function(){if("function"!=typeof window.FreshworksWidget){var n=function(){n.q.push(arguments)};n.q=[],window.FreshworksWidget=n}}() 
+//     script.src = "https://widget.freshworks.com/widgets/67000003397.js";
+//     script.type = 'text/javascript'
+//     script.defer = true;
+//     script.onload = () => {
+//       FreshworksWidget('open')
+//       const timer = setTimeout(() => {
+//         document.getElementById('freshworks-container')?.style.zIndex = 2147483640
         
-      }, 500)
-      window.ReactNativeWebView?.postMessage('done')
-    }
-    document.body.appendChild(script);
+//       }, 500)
+//       window.ReactNativeWebView?.postMessage('done')
+//     }
+//     document.body.appendChild(script);
 
-    return () => {
-      document.body.removeChild(script);
-    }
-  }, []);
+//     return () => {
+//       document.body.removeChild(script);
+//     }
+//   }, []);
   
-  useEffect(() => {
-    const messageHandler = (message) => {
-      window.ReactNativeWebView?.postMessage(JSON.stringify(message))
-    }
-    window.addEventListener('message', messageHandler)
-    return () => {
-      window.removeEventListener('message', messageHandler)
-    }
-  }, [])
+//   useEffect(() => {
+//     const messageHandler = (message) => {
+//       window.ReactNativeWebView?.postMessage(JSON.stringify(message))
+//     }
+//     window.addEventListener('message', messageHandler)
+//     return () => {
+//       window.removeEventListener('message', messageHandler)
+//     }
+//   }, [])
   
   return (
     <div style={{position: 'relative'}}>
