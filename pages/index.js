@@ -5,6 +5,9 @@ function HomePage() {
   const router = useRouter()
   console.log(router?.query?.lang)
   useEffect(() => {
+    if (!router.isReady) {
+      return
+    }
     window.fwSettings={
       'widget_id': 67000003397,
       'locale': router?.query?.lang || 'zh-TW'
@@ -65,7 +68,7 @@ function HomePage() {
     return () => {
       document.body.removeChild(script);
     }
-  }, []);
+  }, [router]);
   
 //   useEffect(() => {
 //     const messageHandler = (message) => {
