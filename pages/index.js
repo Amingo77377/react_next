@@ -3,11 +3,11 @@ import { useRouter } from 'next/router'
 
 function HomePage() {
   const router = useRouter()
-  console.log(router)
+  console.log(router?.query?.lang)
   useEffect(() => {
     window.fwSettings={
       'widget_id': 67000003397,
-      'locale': router?.query?.lang || 'en'
+      'locale': router?.query?.lang || 'zh-TW'
     }
     const script = document.createElement('script');
     !function(){if("function"!=typeof window.FreshworksWidget){var n=function(){n.q.push(arguments)};n.q=[],window.FreshworksWidget=n}}() 
@@ -16,7 +16,7 @@ function HomePage() {
     script.defer = true;
     script.onload = () => {
       FreshworksWidget('open')
-            FreshworksWidget("setLabels", {
+      FreshworksWidget("setLabels", {
         'zh-TW': {
           banner: "rezio 支援中心",
           launcher: "支援",
