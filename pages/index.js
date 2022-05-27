@@ -82,7 +82,7 @@ function HomePage() {
 //   }, [])
   
   return (
-    <div style={{position: 'relative'}}>
+    <div>
      <div 
       onClick={(e) => {
         e.stopPropagation()
