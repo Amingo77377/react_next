@@ -12,8 +12,11 @@ function HomePage() {
       'widget_id': 67000003397,
       'locale': router?.query?.lang || 'zh-TW'
     }
+    const script2 = document.createElement('script')
+    script2.innerHTML = '!function(){if("function"!=typeof window.FreshworksWidget){var n=function(){n.q.push(arguments)};n.q=[],window.FreshworksWidget=n}}()'
+    document.body.appendChild(script2)
+    
     const script = document.createElement('script');
-    !function(){if("function"!=typeof window.FreshworksWidget){var n=function(){n.q.push(arguments)};n.q=[],window.FreshworksWidget=n}}() 
     script.src = "https://widget.freshworks.com/widgets/67000003397.js";
     script.type = 'text/javascript'
     script.defer = true;
@@ -67,6 +70,7 @@ function HomePage() {
 
     return () => {
       document.body.removeChild(script);
+      document.body.removeChild(script2);
     }
   }, [router]);
   
